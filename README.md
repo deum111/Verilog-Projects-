@@ -1,2 +1,2 @@
 # Verilog-Projects-
-This repository contains projects and practice code completed using Verilog HDL.
+This repository contains projects/assignments and practice code completed using Verilog HDL in the Xilinx Vivado environment.
