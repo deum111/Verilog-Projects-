@@ -1,0 +1,18 @@
+Program counter keeps the memory address of the instruction read to Instruction Register.
+
+Controls in Program Counter Design:
+
+PC_inc – increments the value in the Program Counter
+
+PC_clr – resets the Program Counter to zero
+
+PC_ld – loads the value calculated in the OFFSET into the Program Counter
+
+OFFSET is used when a branching or PC offset instruction is executed. 
+The instruction carries an 8 bit offset in the IR[7:0] bits.
+
+The formula a + b -1 should be read as:
+
+The new PC = previous PC + Offset -1
+
+the -1 is to compensate for the PC increment that would happen prior to reading the next instruction.

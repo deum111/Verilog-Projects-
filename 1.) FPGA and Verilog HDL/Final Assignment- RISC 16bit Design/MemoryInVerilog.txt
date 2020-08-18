@@ -1,0 +1,35 @@
+Memory can be declared as an array of registers in Verilog
+
+ 
+
+As you already know a register can be declared as:
+
+reg [7:0] a; 
+
+where a is a register that is 8 bits and little endian in format.
+
+ 
+
+To declare a memory block of 64 locations with 8-bits per register:
+
+reg [7:0] mem1 [63:0];
+
+Note that the number of memory addresses is not the number of bits.
+
+ 
+
+E.g. To declare a memory block called ‘mem’ of 256 memory locations with 16-bit size
+
+reg [15:0] mem [255:0];
+
+ 
+
+to read a value in memory:
+
+if you need to read the value in memory location 3 in the previously declared memory bank:
+
+reg [15:0] = mem[2];
+
+to write the decimal value 25 into memory location 5:
+
+mem[4] = 16’b0000 0000 0001 1001;

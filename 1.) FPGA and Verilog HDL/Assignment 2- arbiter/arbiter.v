@@ -88,33 +88,33 @@ module arbiter(
       begin
         case ( state )
           2'b01: if ( gnt_0_out )        // The assign statements created using the 
-                   nstate <= 2'b01;      // net data type outputs are used as the conditionals
+                   nstate = 2'b01;      // net data type outputs are used as the conditionals
                  else if ( gnt_1_out )   // in this sequential function.
-                   nstate <= 2'b10;      
+                   nstate = 2'b10;      
                  else if ( gnt_2_out )   
-                   nstate <= 2'b11;
+                   nstate = 2'b11;
                  else 
-                   nstate <= 2'b11;
+                   nstate = 2'b11;
           
           2'b10: if ( gnt_0_out )
-                   nstate <= 2'b01;
+                   nstate = 2'b01;
                  else if ( gnt_1_out )
-                   nstate <= 2'b10;
+                   nstate = 2'b10;
                  else if ( gnt_2_out )
-                   nstate <= 2'b11;
+                   nstate = 2'b11;
                  else 
-                   nstate <= 2'b11;                  
+                   nstate = 2'b11;                  
           
           2'b11: if ( gnt_0_out )
-                   nstate <= 2'b01;
+                   nstate = 2'b01;
                  else if ( gnt_1_out )
-                   nstate <= 2'b10;
+                   nstate = 2'b10;
                  else if ( gnt_2_out )
-                   nstate <= 2'b11;
+                   nstate = 2'b11;
                  else 
-                   nstate <= 2'b11;
+                   nstate = 2'b11;
           
-          default: nstate <= 2'b11;                     
+          default: nstate = 2'b11;                     
         endcase
       end 
     
@@ -123,24 +123,24 @@ module arbiter(
       begin                       // the output will not be realized until one
         case ( state )            // clock cycle after the input is realized.
           2'b01:   begin          // Mentioned above gnt_0 is associated
-                     gnt_0 <= 1;  // with state 1 and so on to allow for a reset state 0...     
-                     gnt_1 <= 0;
-                     gnt_2 <= 0;
+                     gnt_0 = 1;  // with state 1 and so on to allow for a reset state 0...     
+                     gnt_1 = 0;
+                     gnt_2 = 0;
                    end   
           2'b10:   begin
-                     gnt_0 <= 0;
-                     gnt_1 <= 1;
-                     gnt_2 <= 0;
+                     gnt_0 = 0;
+                     gnt_1 = 1;
+                     gnt_2 = 0;
                    end                 
           2'b11:   begin
-                     gnt_0 <= 0;
-                     gnt_1 <= 0;
-                     gnt_2 <= 1;
+                     gnt_0 = 0;
+                     gnt_1 = 0;
+                     gnt_2 = 1;
                    end  
           default: begin 
-                     gnt_0 <= 0;
-                     gnt_1 <= 0;
-                     gnt_2 <= 0;
+                     gnt_0 = 0;
+                     gnt_1 = 0;
+                     gnt_2 = 0;
                    end  
         endcase
       end

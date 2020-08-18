@@ -1,0 +1,15 @@
+
+
+//State how many hours it took to complete the project.
+
+Design a processor that would calculate the Greatest Common Divisor of two integers. 
+Use Euclidean Algorithm.
+
+The report should include the cover page, the problem statement, 
+explanation of your approach including the reuse of previously developed modules, 
+a block diagram, ASM-D charts, Verilog codes used, and the waveforms screen-prints for each question.
+
+State problems encountered at simulation how they were resolved.
+Display the initial values and how they are reduced to GCD using the 7 segment displays.
+
+
